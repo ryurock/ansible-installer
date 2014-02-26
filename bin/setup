@@ -2,8 +2,6 @@
 #
 set -e
 
-git_url="https://github.com/ryurock/versicolor.git"
-repo_name="versicolor"
 python_ver="2.6.9"
 os=$(uname)
 
