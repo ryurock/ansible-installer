@@ -12,7 +12,7 @@ This plugin was inspired from [pyenv-installer](https://github.com/yyuu/pyenv-in
 Install [ansible](http://www.ansible.com/home) and friends by running:
 
 ```
-curl https://github.com/ryurock/ansible-installer.git | bash
+curl https://raw.github.com/ryurock/ansible-installer/master/bin/setup | bash
 # OSX
 source ~/.bashrc
 # Linux
