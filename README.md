@@ -14,7 +14,10 @@ Install [ansible](http://www.ansible.com/home) and friends by running:
 ```
 curl https://raw.github.com/ryurock/ansible-installer/master/bin/setup | bash
 # OSX
+source ~/.bash_profile
+# or
 source ~/.bashrc
+
 # Linux
 source /etc/profile
 
