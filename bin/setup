@@ -41,13 +41,13 @@ if [ ! `which pyenv` >/dev/null 2>&1 ]; then
 
 
   # add pyenv system variables
-  if [ `grep -c "PYENV_ROOT" ~/.bashrc` = 0 ]; then
+  if [ `grep -c "PYENV_ROOT" ${path}` = 0 ]; then
     echo "export PYENV_ROOT=\"/usr/local/pyenv\"" >> ${path}
     echo "export PATH=$PYENV_ROOT/bin:\$PATH" >> ${path}
   fi
 
   # pyenv Initialize added bashrc
-  if [ `grep -c "pyenv init" ~/.bashrc` = 0 ]; then
+  if [ `grep -c "pyenv init" ${path}` = 0 ]; then
     echo 'eval "$(pyenv init -)"' >> ${path}
   fi
 fi
