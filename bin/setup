@@ -22,8 +22,10 @@ fi
 
 if [ -e /etc/profile.d/pyenv.sh ]; then
     path=/etc/profile.d/pyenv.sh
-else
+elif [ -e ~/.bashrc ]; then
     path=~/.bashrc
+else
+    path=~/.bash_profile
 fi
 
 source ${path}
