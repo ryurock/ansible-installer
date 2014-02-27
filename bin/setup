@@ -28,6 +28,10 @@ else
     path=~/.bash_profile
 fi
 
+if [ ! -e ${path} ]; then
+  touch ${path}
+fi
+
 source ${path}
 
 if [ ! `which pyenv` >/dev/null 2>&1 ]; then
