@@ -6,8 +6,8 @@ python_ver="2.6.9"
 os=$(uname)
 
 case $os in
-  "Darwin" ) pack_command="brew" ;;
-  "Linux"  ) pack_command="yum"  ;;
+  "Darwin" ) echo "install OSX"   ;;
+  "Linux"  ) echo "install Linux" ;;
   *        ) echo "Non Support OS"
              exit;;
 esac
@@ -33,16 +33,15 @@ if [ ! -e ${path} ]; then
 fi
 
 source ${path}
+export PYENV_ROOT="$HOME/.phpenv"
 
-if [ ! `which pyenv` >/dev/null 2>&1 ]; then
-  export PYENV_ROOT="$HOME/.phpenv"
+if [ ! -d ${PYENV_ROOT} ]; then
   echo "[Install] pyenv Install Path: ${PYENV_ROOT}"
   curl https://raw.github.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 
-
   # add pyenv system variables
   if [ `grep -c "PYENV_ROOT" ${path}` = 0 ]; then
-    echo "export PYENV_ROOT=\"$HOME/.pyenv\"" >> ${path}
+    echo "export PYENV_ROOT=\"${PYENV_ROOT}\"" >> ${path}
     echo "export PATH=$PYENV_ROOT/bin:\$PATH" >> ${path}
   fi
 
@@ -53,9 +52,8 @@ if [ ! `which pyenv` >/dev/null 2>&1 ]; then
 fi
 
 source ${path}
-
 # check python 2.6.x
-if [ ! `pyenv versions | grep -E 2.6*` >/dev/null 2>&1 ]; then
+if [ ! `pyenv versions | grep -E 2.6.*` >/dev/null 2>&1 ]; then
   echo "[Install] Python ${python_ver}"
   pyenv install ${python_ver}
   pyenv global ${python_ver}
