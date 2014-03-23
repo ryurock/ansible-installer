@@ -7,6 +7,18 @@ This tools is used to install `ansible` and friends.
 
 This plugin was inspired from [pyenv-installer](https://github.com/yyuu/pyenv-installer).
 
+## Deppencecy
+
+* zlib
+* libyaml
+
+### Install Deppencecy OSX
+
+```shell
+brew install homebrew/dupes/zlib
+brew install libyaml
+```
+
 ## Installation
 
 Install [ansible](http://www.ansible.com/home) and friends by running:
