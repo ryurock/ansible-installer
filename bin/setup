@@ -33,7 +33,7 @@ if [ ! -e ${path} ]; then
 fi
 
 source ${path}
-export PYENV_ROOT="$HOME/.phpenv"
+export PYENV_ROOT="$HOME/.pyenv"
 
 if [ ! -d ${PYENV_ROOT} ]; then
   echo "[Install] pyenv Install Path: ${PYENV_ROOT}"
